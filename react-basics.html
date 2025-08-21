@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        const button = <button>hello</button>
+        const paragraph = <p>paragraph of text</p>
+        const socks = 10;
+        const tshirt = 8;
+        const productCost = socks + 2 * tshirt;
+        const shipingCost = 5;
+        const totalCost = productCost + shipingCost;
+        const currentDate = dayjs().format('MMMM D');
+
+        const container = document.querySelector('.js-container');
+        const root = ReactDOM.createRoot(container)
+
+    function renderClock() {
+        const currentTime = dayjs().format('HH:mm:ss')
+        
+        
+
+
+    
+
+
+        const div = (
+            <div>
+                <button>Good job!</button>
+                <p>My name is Danil and i'm {10+10} years old</p>
+
+                <p>Cotton socks</p>
+                <p>Price: $10</p>
+                <button>Add to Cart </button>
+
+                <p>{`Produkt cost: $${productCost}`}</p>
+                <p>{`Shiping cost: $${shipingCost}`}</p>
+                <p>{`Total   cost: $${totalCost}`}</p>
+
+                <p>{`Today is : ${currentDate}`}</p>
+                <p>{`Current time: ${currentTime}`}</p>
+
+                <button>Place your order</button>
+
+
+
+
+
+            </div>
+        );
+        root.render(div);
+    }
+        
+        renderClock();
+        setInterval(renderClock,1000);
+
+        console.log(currentDate)
+        console.log(productCost)
+
+
+    </script>
+  </body>
+</html>
